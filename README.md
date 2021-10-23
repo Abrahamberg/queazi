@@ -1,3 +1,5 @@
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=Abrahamberg_queazi&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=Abrahamberg_queazi)
+
 # queazi - Free OpneSource Easy Quize Maker 
 queazi is a real-time feedback and quiz maker, mainly to have fun with your friends or with your coworkers. quazi is made of 2 words combiled "quiz and easy" it means it is a easy way to make quize and shair it with your fiends.
 
