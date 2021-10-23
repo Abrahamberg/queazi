@@ -1,4 +1,4 @@
-name: SonarCloudScan
+name: Build
 on:
   workflow_dispatch:
   push:
