@@ -17,9 +17,9 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: '14.x'
-      - run: npm install
-      - run: npm run build --if-present
-      - run: npm test
+      - run: npm install npm test --prefix ./frontend/
+      - run: npm run build  --if-present --prefix ./frontend/
+      - run: npm test --prefix ./frontend/
             
       - name: SonarCloud Scan
         uses: SonarSource/sonarcloud-github-action@master
