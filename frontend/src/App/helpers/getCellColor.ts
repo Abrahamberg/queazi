@@ -1,4 +1,4 @@
-export default function getCellColors(index: number) {
+export default function getCellColor(index: number) {
     return cellColor[index % cellColor.length]
 }
 
