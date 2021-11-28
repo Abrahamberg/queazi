@@ -26,7 +26,7 @@ const CountDownProgressBar = ({ seconds, onProgressFinish }: Props) => {
 
 
     if (seconds === 0) return <></> //dont show it if it is not applicable 
-    else return <ProgressBar striped variant="info" now={((seconds - timeLeft) * 100 / seconds)} />
+    else return <ProgressBar className="sticky-top" striped variant="info" now={((seconds - timeLeft) * 100 / seconds)} />
 
 
 

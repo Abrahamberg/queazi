@@ -1,10 +1,11 @@
 import React, { useState } from 'react'
-import { Container, Row } from 'react-bootstrap';
-import Simple from '../../components/answer-alternatives/LongCells'
+import { Col, Container, Row } from 'react-bootstrap';
+import LongCells from '../../components/answer-alternatives/LongCells'
 import CountDownProgressBar from '../../components/CountDownProgressBar'
+import { TextAndImage } from '../../interfaces/TextAndImage';
 interface Props {
-    question: string,
-    alternatives: string[],
+    question: TextAndImage,
+    alternatives: TextAndImage[],
 }
 
 const BasicQuestions: React.FC<Props> = ({ question, alternatives }) => {
@@ -14,12 +15,17 @@ const BasicQuestions: React.FC<Props> = ({ question, alternatives }) => {
     return (
         <>
             <CountDownProgressBar seconds={10} onProgressFinish={() => setEnabled(false)} />
-            <Container>
-
-                <h3 className="pt-4">{question}</h3>
-
+            <Container style={{ maxWidth: '600px' }}>
                 <Row>
-                    {alternatives.map((alternative, i) => <Simple key={i} index={i} enabled={enabled} onSelect={() => setEnabled(false)} > {alternative}  </Simple>)}
+                    <h3 className="pt-4">{question.text}</h3>
+                    {question.image ? <img src={`gallery/${question.image}`} alt="" /> : null}
+                </Row>
+                <Row>
+                    {alternatives.map((alternative, i) =>
+                        <LongCells key={i} index={i} enabled={enabled} onSelect={() => setEnabled(false)} >
+                            <Col xs={2} > {alternative.image && <img src={`gallery/${alternative.image}`} className="rounded-circle mini-icon" alt="" />}  </Col>
+                            <Col className=" my-auto" ><span style={{ fontSize: '3vw' }}>{alternative.text}</span> </Col>
+                        </LongCells>)}
 
                 </Row>
             </Container>

@@ -7,8 +7,12 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <BasicQuestions question="A Question Text"
-          alternatives={["aaaa", "bbbb", "cccc", "dddd"]}
+        <BasicQuestions question={{ image: "img01.jpg", text: "What is the main question" }}
+
+          alternatives={[{ image: "img01.jpg", text: "aaaaa aaaa aaa" },
+          { image: "img02.jpg", text: "bbbb bbb bbbb" },
+          { image: "img03.jpg", text: "ccc cccc ccc cccc ccc" }
+          ]}
         />
       </header>
     </div>
